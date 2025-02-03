@@ -1,0 +1,57 @@
+{
+  "id": "journey_grid",
+  "type": "SharedSlice",
+  "name": "JourneyGrid",
+  "description": "JourneyGrid",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Body",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "journey": {
+          "type": "Group",
+          "config": {
+            "label": "Journey",
+            "repeat": true,
+            "fields": {
+              "steps": {
+                "type": "Link",
+                "config": {
+                  "label": "Steps",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "steps"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

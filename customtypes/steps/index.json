@@ -1,0 +1,57 @@
+{
+  "format": "custom",
+  "id": "steps",
+  "label": "Steps",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "name": {
+        "type": "Text",
+        "config": {
+          "label": "Name",
+          "placeholder": ""
+        }
+      },
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID"
+        }
+      },
+      "image": {
+        "type": "Image",
+        "config": {
+          "label": "Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "seats_left": {
+        "type": "Number",
+        "config": {
+          "label": "Seats Left",
+          "placeholder": ""
+        }
+      },
+      "batch_start": {
+        "type": "Timestamp",
+        "config": {
+          "label": "Batch Start",
+          "placeholder": ""
+        }
+      },
+      "schedule_consultant": {
+        "type": "Link",
+        "config": {
+          "label": "Schedule Consultant",
+          "placeholder": "",
+          "select": null,
+          "allowTargetBlank": true,
+          "allowText": true,
+          "repeat": false
+        }
+      }
+    }
+  }
+}
