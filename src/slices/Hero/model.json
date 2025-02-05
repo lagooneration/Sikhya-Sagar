@@ -40,6 +40,38 @@
             "allowText": true,
             "repeat": false
           }
+        },
+        "deck_texture": {
+          "type": "Image",
+          "config": {
+            "label": "Deck Texture",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "wheel_texture": {
+          "type": "Image",
+          "config": {
+            "label": "Wheel Texture",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "truck_color": {
+          "type": "Image",
+          "config": {
+            "label": "Truck Color",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "bolt_color": {
+          "type": "Image",
+          "config": {
+            "label": "Bolt Color",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {}

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Content } from "@prismicio/client";
+import { asImageSrc, Content } from "@prismicio/client";
 import { PrismicRichText, PrismicText, SliceComponentProps } from "@prismicio/react";
 import { PrismicNextLink } from "@prismicio/next";
 
@@ -18,7 +18,18 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 /**
  * Component for "Hero" Slices.
  */
+
+const DEFAULT_TEXTURE = "/Deck.webp";
+const DEFAULT_COLOR = "#000000";
+
 const Hero: FC<HeroProps> = ({ slice }) => {
+  const deckTextureURL =
+    asImageSrc(slice.primary.deck_texture) || DEFAULT_TEXTURE;
+  const wheelTextureURL =
+    asImageSrc(slice.primary.wheel_texture) || DEFAULT_TEXTURE;
+  const truckColor =
+    slice.primary.truck_color || DEFAULT_COLOR;
+  const boltColor = slice.primary.bolt_color || DEFAULT_COLOR;
   return (
     <Bounded
       data-slice-type={slice.slice_type}
@@ -44,7 +55,12 @@ const Hero: FC<HeroProps> = ({ slice }) => {
         </ButtonLink>
         </div>
       </div>
-      {/* <InteractiveModel /> */}
+      <InteractiveModel
+        deckTextureURL={deckTextureURL}
+        wheelTextureURL={wheelTextureURL}
+        truckColor={truckColor}
+        boltColor={boltColor}
+      />
     </Bounded>
   );
 };
