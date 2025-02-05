@@ -24,7 +24,7 @@ export function Skater({ skater, index }: Props) {
     <div className="skater group relative flex flex-col items-center gap-4">
       <div className="stack-layout overflow-hidden">
         <PrismicNextImage
-          field={skater.data.photo_background}
+          field={skater.data.background_image}
           width={500}
           imgixParams={{ q: 20 }}
           alt=""
@@ -32,7 +32,7 @@ export function Skater({ skater, index }: Props) {
         />
         <SkaterScribble className={clsx("relative", scribbleColor)} />
         <PrismicNextImage
-          field={skater.data.photo_foreground}
+          field={skater.data.foreground_image}
           width={500}
           alt=""
           className="transform transition-transform duration-1000 ease-in-out group-hover:scale-110"
@@ -40,11 +40,11 @@ export function Skater({ skater, index }: Props) {
         <div className="relative h-48 w-full place-self-end bg-gradient-to-t from-black via-transparent to-transparent"></div>
         <h3 className="relative grid place-self-end justify-self-start p-2 font-sans text-brand-gray ~text-2xl/3xl">
           <span className="mb-[-.3em] block">{skater.data.name}</span>
-          <span className="block">{skater.data.reasearch_background}</span>
+          <span className="block text-sm">{skater.data.research_background}</span>
         </h3>
       </div>
       <ButtonLink field={skater.data.reach_out} size="sm">
-        Build their board
+        Reach out
       </ButtonLink>
     </div>
   );

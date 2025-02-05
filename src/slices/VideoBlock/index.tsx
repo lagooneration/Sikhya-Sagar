@@ -21,10 +21,10 @@ const VideoBlock = ({ slice }: VideoBlockProps): JSX.Element => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-texture bg-zinc-900"
+      className="bg-texture bg-zinc-900 py-24"
     >
       <h2 className="sr-only">Video Reel</h2>
-      <div className="relative aspect-video">
+      <div className="relative aspect-video max-w-6xl mx-auto">
         {/* Masks */}
         <div
           className={clsx(

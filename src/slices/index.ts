@@ -7,6 +7,5 @@ export const components = {
   journey_grid: dynamic(() => import("./JourneyGrid")),
   step_and_image: dynamic(() => import("./StepAndImage")),
   team_grid: dynamic(() => import("./TeamGrid")),
-  text_and_image: dynamic(() => import("./TextAndImage")),
   video_block: dynamic(() => import("./VideoBlock")),
 };

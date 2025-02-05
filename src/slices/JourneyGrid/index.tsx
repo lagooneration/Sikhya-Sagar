@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { JSX } from "react/jsx-runtime";
 import { Content, isFilled  } from "@prismicio/client";
 import { PrismicRichText, PrismicText, SliceComponentProps } from "@prismicio/react";
 import { Bounded } from "@/components/Bounded";
@@ -19,10 +19,8 @@ const JourneyGrid = ({ slice }: JourneyGridProps): JSX.Element => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      // className="bg-texture bg-brand-gray"
-      className="bg-brand-gray relative h-dvh overflow-hidden text-zinc-800 bg-texture"
+      className="bg-texture bg-brand-gray"
     >
-      {/* <div className="h-screen"> */}
       <SlideIn>
         <Heading className="text-center ~mb-4/6" as="h2">
           <PrismicText field={slice.primary.heading} />
@@ -35,15 +33,13 @@ const JourneyGrid = ({ slice }: JourneyGridProps): JSX.Element => {
       </SlideIn>
       <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
         {slice.primary.journey.map(
-          ({ steps }) =>
-            isFilled.contentRelationship(steps) && (
-              <StepsJourney key={steps.id} id={steps.id} />
-            )
-        )}
+                ({ steps }) =>
+                  isFilled.contentRelationship(steps) && (
+                    <StepsJourney key={steps.id} id={steps.id} />
+                  )
+              )}
       </div>
-      {/* </div> */}
     </Bounded>
-    
   );
 };
 

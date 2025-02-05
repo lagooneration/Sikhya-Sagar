@@ -8,16 +8,16 @@ import { Content } from "@prismicio/client";
 export default async function Page() {
   const client = createClient();
   const page = await client.getSingle("homepage");
-  const slices = bundleTextAndImageSlices(page.data.slices);
+  const slices = bundleStepAndImageSlices(page.data.slices);
 
   return (
     <SliceZone
       slices={slices}
       components={{
         ...components,
-        text_and_image_bundle: ({
+        step_and_image_bundle: ({
           slice,
-        }: SliceComponentProps<TextAndImageBundleSlice>) => (
+        }: SliceComponentProps<StepAndImageBundleSlice>) => (
           <div>
             <SliceZone slices={slice.slices} components={components} />
           </div>
@@ -37,33 +37,33 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-type TextAndImageBundleSlice = {
+type StepAndImageBundleSlice = {
   id: string;
-  slice_type: "text_and_image_bundle";
+  slice_type: "step_and_image_bundle";
   slices: Content.TextAndImageSlice[];
 };
 
-function bundleTextAndImageSlices(
+function bundleStepAndImageSlices(
   slices: Content.HomepageDocumentDataSlicesSlice[]
 ) {
   const res: (
     | Content.HomepageDocumentDataSlicesSlice
-    | TextAndImageBundleSlice
+    | StepAndImageBundleSlice
   )[] = [];
 
   for (const slice of slices) {
-    if (slice.slice_type !== "text_and_image") {
+    if (slice.slice_type !== "step_and_image") {
       res.push(slice);
       continue;
     }
 
     const bundle = res.at(-1);
-    if (bundle?.slice_type === "text_and_image_bundle") {
+    if (bundle?.slice_type === "step_and_image_bundle") {
       bundle.slices.push(slice);
     } else {
       res.push({
         id: `${slice.id}-bundle`,
-        slice_type: "text_and_image_bundle",
+        slice_type: "step_and_image_bundle",
         slices: [slice],
       });
     }

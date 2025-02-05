@@ -1,3 +1,4 @@
+import { JSX } from "react/jsx-runtime";
 import { Bounded } from "@/components/Bounded";
 import { Heading } from "@/components/Heading";
 import { createClient } from "@/prismicio";
@@ -23,7 +24,7 @@ const TeamGrid = async ({ slice }: TeamGridProps): Promise<JSX.Element> => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-texture bg-brand-navy"
+      className="bg-texture relative py-24 bg-brand-navy" 
     >
       <SlideIn>
         <Heading as="h2" size="lg" className="mb-8 text-center text-white">

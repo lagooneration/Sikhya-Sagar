@@ -6,13 +6,14 @@ import { createClient } from "@/prismicio";
 import { Logo } from "@/components/Logo";
 import { Bounded } from "./Bounded";
 import { FooterPhysics } from "./FooterPhysics";
+import { Socials } from "./Socials";
 
 export async function Footer() {
   const client = createClient();
   const settings = await client.getSingle("settings");
 
-  const boardTextureURLs = settings.data.footer_skateboards
-    .map((item) => asImageSrc(item.skateboard, { h: 600 }))
+  const boardTextureURLs = settings.data.footer_icons
+    .map((item) => asImageSrc(item.icons, { h: 600 }))
     .filter((url): url is string => Boolean(url));
 
   return (
@@ -31,6 +32,7 @@ export async function Footer() {
         />
         <Logo className="pointer-events-none relative h-20 mix-blend-exclusion md:h-28" />
       </div>
+      <div className="flex flex-row items-center justify-center gap-4">
       <Bounded as="nav">
         <ul className="flex flex-wrap justify-center gap-8 ~text-lg/xl">
           {settings.data.navigation.map((item) => (
@@ -40,6 +42,8 @@ export async function Footer() {
           ))}
         </ul>
       </Bounded>
+      <Socials />
+      </div>
       {/* List of links */}
     </footer>
   );

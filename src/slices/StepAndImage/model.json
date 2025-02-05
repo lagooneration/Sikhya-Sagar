@@ -18,10 +18,10 @@
             "label": "Theme",
             "placeholder": "",
             "options": [
-              "Dust",
-              "Lime",
+              "Blue",
+              "Orange",
               "Navy",
-              "Cherry"
+              "Lime"
             ]
           }
         },
