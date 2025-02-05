@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import { Content } from "@prismicio/client";
 import {
   PrismicRichText,
@@ -35,8 +36,8 @@ const StepAndImage = ({ slice, index }: StepAndImageProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className={clsx(
         "sticky top-[calc(var(--index)*2rem)]",
-        theme === "Dust" && "bg-texture bg-brand-blue text-white",
-        theme === "Cherry" && "bg-texture bg-brand-orange text-white",
+        theme === "Blue" && "bg-texture bg-brand-blue text-white",
+        theme === "Orange" && "bg-texture bg-brand-orange text-white",
         theme === "Navy" && "bg-texture bg-brand-navy text-white",
         theme === "Lime" && "bg-texture bg-brand-lime"
       )}
@@ -72,6 +73,7 @@ const StepAndImage = ({ slice, index }: StepAndImageProps): JSX.Element => {
         <ParallaxImage
           foregroundImage={slice.primary.foreground_image}
           backgroundImage={slice.primary.background_image}
+          extraImage={slice.primary.extra_image}
         />
       </div>
     </Bounded>

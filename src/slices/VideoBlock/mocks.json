@@ -7,6 +7,37 @@
 				"__TYPE__": "FieldContent",
 				"value": "not",
 				"type": "Text"
+			},
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Tropical"
+						}
+					}
+				]
+			},
+			"enactus": {
+				"key": "838df0ac-611f-402e-b3ee-051d7e67edfa",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com",
+					"text": "product"
+				}
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Reprehenderit incididunt culpa laboris nulla officia pariatur cillum nulla. Consectetur ipsum est dolore duis non id voluptate dolor commodo."
+						}
+					}
+				]
 			}
 		},
 		"items": []

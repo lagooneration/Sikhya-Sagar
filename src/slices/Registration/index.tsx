@@ -1,24 +1,21 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { PrismicRichText, PrismicText, SliceComponentProps } from "@prismicio/react";
-import { PrismicNextLink } from "@prismicio/next";
-
 import { Bounded } from "@/components/Bounded";
-import { Heading } from "@/components/Heading";
+import { TallLogo } from "../Hero/TallLogo";
 import { ButtonLink } from "@/components/ButtonLink";
-import { WideLogo } from "./WideLogo";
-import { TallLogo } from "./TallLogo";
-import { InteractiveModel } from "./InteractiveModel";
+import { Heading } from "@/components/Heading";
+import { WideLogo } from "../Hero/WideLogo";
 
 /**
- * Props for `Hero`.
+ * Props for `Registration`.
  */
-export type HeroProps = SliceComponentProps<Content.HeroSlice>;
+export type RegistrationProps = SliceComponentProps<Content.RegistrationSlice>;
 
 /**
- * Component for "Hero" Slices.
+ * Component for "Registration" Slices.
  */
-const Hero: FC<HeroProps> = ({ slice }) => {
+const Registration: FC<RegistrationProps> = ({ slice }) => {
   return (
     <Bounded
       data-slice-type={slice.slice_type}
@@ -44,9 +41,8 @@ const Hero: FC<HeroProps> = ({ slice }) => {
         </ButtonLink>
         </div>
       </div>
-      {/* <InteractiveModel /> */}
     </Bounded>
   );
 };
 
-export default Hero;
+export default Registration;

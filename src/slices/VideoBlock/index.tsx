@@ -1,9 +1,14 @@
+import { JSX } from "react";
 import { Bounded } from "@/components/Bounded";
 import { Content, isFilled } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { PrismicText, SliceComponentProps } from "@prismicio/react";
 import { LazyYouTubePlayer } from "./LazyYouTubePlayer";
 import clsx from "clsx";
 import Image from "next/image";
+import { PrismicNextLink } from "@prismicio/next";
+import { SlideIn } from "@/components/SlideIn";
+import { Heading } from "@/components/Heading";
+import { ButtonLink } from "@/components/ButtonLink";
 
 const MASK_CLASSES =
   "[mask-image:url(/video-mask.png)] [mask-mode:alpha] [mask-position:center_center] [mask-repeat:no-repeat] [mask-size:100%_auto]";
@@ -57,6 +62,26 @@ const VideoBlock = ({ slice }: VideoBlockProps): JSX.Element => {
             className="pointer-events-none object-cover opacity-50"
           />
         </div>
+      </div>
+      <div>
+      <Bounded>
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-row items-center justify-between gap-4">
+            <SlideIn>
+              <Heading size="lg" as="h2" className="text-brand-gray">
+                <PrismicText field={slice.primary.heading} />
+              </Heading>
+            </SlideIn>
+            <ButtonLink field={slice.primary.enactus} color="pastel" size="lg" icon="enactus" className="z-20 mt-2 block">
+            {slice.primary.enactus.text}
+          </ButtonLink>
+          </div>
+          <div className="flex flex-row items-center justify-between gap-4 text-gray-200">
+            <PrismicText field={slice.primary.body} />
+          </div>
+        </div>
+
+      </Bounded>
       </div>
     </Bounded>
   );

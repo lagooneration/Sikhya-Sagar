@@ -1,12 +1,21 @@
 import { FaCartShopping, FaPlus, FaWhatsapp } from "react-icons/fa6";
 import { PrismicNextLink, PrismicNextLinkProps } from "@prismicio/next";
 import clsx from "clsx";
+import Image from "next/image";
+import { FaArrowCircleRight } from "react-icons/fa";
+
 
 export type ButtonProps = PrismicNextLinkProps & {
-  color?: "orange" | "purple" | "lime";
+  color?: "orange" | "purple" | "lime" | "pastel";
   size?: "sm" | "md" | "lg";
-  icon?: "cart" | "skateboard" | "plus" | "whatsapp";
+  icon?: "cart" | "skateboard" | "plus" | "whatsapp" | "enactus";
 };
+
+function EnactusIcon() {
+  return (
+    <Image src="/enactus.png" alt="Enactus Logo" width={100} height={100} />
+  );
+}
 
 export function ButtonLink({
   color = "orange",
@@ -28,6 +37,9 @@ export function ButtonLink({
         color === "purple" &&
           "from-brand-purple to-brand-lime text-white hover:text-black",
         color === "lime" && "from-brand-lime to-brand-orange text-black",
+        color === "pastel" &&
+          "from-brand-navy to-brand-purple text-gray-300 hover:text-white",
+        
         className,
       )}
       {...props}
@@ -36,16 +48,17 @@ export function ButtonLink({
         <>
           <div
             className={clsx(
-              "flex size-6 items-center justify-center transition-transform group-hover:-rotate-[25deg] [&>svg]:h-full [&>svg]:w-full",
+              "flex size-6 items-center justify-center transition-transform group-hover:rotate-[45deg] [&>svg]:h-full [&>svg]:w-full",
               size === "sm" && "size-5",
               size === "md" && "size-6",
               size === "lg" && "~size-6/8",
             )}
           >
             {icon === "cart" && <FaCartShopping />}
-            {icon === "skateboard" && <SkateboardIcon />}
+            {icon === "skateboard" && <FaArrowCircleRight />}
             {icon === "plus" && <FaPlus />}
             {icon === "whatsapp" && <FaWhatsapp />}
+            {icon === "enactus" && <EnactusIcon />}
           </div>
           <div className="w-px self-stretch bg-black/25" />
         </>

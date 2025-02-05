@@ -74,6 +74,74 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
+type RegistrationDocumentDataSlicesSlice =
+  | StepAndImageSlice
+  | HeroSlice
+  | RegistrationSlice;
+
+/**
+ * Content for Registration documents
+ */
+interface RegistrationDocumentData {
+  /**
+   * Slice Zone field in *Registration*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: registration.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<RegistrationDocumentDataSlicesSlice> /**
+   * Meta Title field in *Registration*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: registration.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Registration*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: registration.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Registration*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: registration.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Registration document from Prismic
+ *
+ * - **API ID**: `registration`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type RegistrationDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<RegistrationDocumentData>,
+    "registration",
+    Lang
+  >;
+
 /**
  * Item in *Settings → Navigation*
  */
@@ -455,6 +523,7 @@ export type TeamDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | HomepageDocument
+  | RegistrationDocument
   | SettingsDocument
   | SkaterDocument
   | SocialsDocument
@@ -606,6 +675,51 @@ export type JourneyGridSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Registration → Default → Primary*
+ */
+export interface RegistrationSliceDefaultPrimary {
+  /**
+   * Heading field in *Registration → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: registration.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField;
+}
+
+/**
+ * Default variation for Registration Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RegistrationSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<RegistrationSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Registration*
+ */
+type RegistrationSliceVariation = RegistrationSliceDefault;
+
+/**
+ * Registration Shared Slice
+ *
+ * - **API ID**: `registration`
+ * - **Description**: Registration
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RegistrationSlice = prismic.SharedSlice<
+  "registration",
+  RegistrationSliceVariation
+>;
+
+/**
  * Primary content in *StepAndImage → Default → Primary*
  */
 export interface StepAndImageSliceDefaultPrimary {
@@ -668,6 +782,16 @@ export interface StepAndImageSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   foreground_image: prismic.ImageField<never>;
+
+  /**
+   * Extra Image field in *StepAndImage → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: step_and_image.default.primary.extra_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  extra_image: prismic.ImageField<never>;
 }
 
 /**
@@ -746,6 +870,16 @@ export interface StepAndImageSliceImageOnLeftPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   foreground_image: prismic.ImageField<never>;
+
+  /**
+   * Extra Image field in *StepAndImage → Image on Left → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: step_and_image.imageOnLeft.primary.extra_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  extra_image: prismic.ImageField<never>;
 }
 
 /**
@@ -838,6 +972,42 @@ export interface VideoBlockSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   youtube_video_id: prismic.KeyTextField;
+
+  /**
+   * Heading field in *VideoBlock → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_block.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Enactus field in *VideoBlock → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_block.default.primary.enactus
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  enactus: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Body field in *VideoBlock → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_block.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body: prismic.RichTextField;
 }
 
 /**
@@ -894,6 +1064,9 @@ declare module "@prismicio/client" {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
+      RegistrationDocument,
+      RegistrationDocumentData,
+      RegistrationDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
@@ -917,6 +1090,10 @@ declare module "@prismicio/client" {
       JourneyGridSliceDefaultPrimary,
       JourneyGridSliceVariation,
       JourneyGridSliceDefault,
+      RegistrationSlice,
+      RegistrationSliceDefaultPrimary,
+      RegistrationSliceVariation,
+      RegistrationSliceDefault,
       StepAndImageSlice,
       StepAndImageSliceDefaultPrimary,
       StepAndImageSliceImageOnLeftPrimary,

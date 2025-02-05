@@ -69,6 +69,14 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "extra_image": {
+          "type": "Image",
+          "config": {
+            "label": "Extra Image",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {}
@@ -135,6 +143,14 @@
           "type": "Image",
           "config": {
             "label": "Foreground Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "extra_image": {
+          "type": "Image",
+          "config": {
+            "label": "Extra Image",
             "constraint": {},
             "thumbnails": []
           }

@@ -32,16 +32,25 @@ export async function Footer() {
         />
         <Logo className="pointer-events-none relative h-20 mix-blend-exclusion md:h-28" />
       </div>
-      <div className="flex flex-row items-center justify-center gap-4">
-      <Bounded as="nav">
-        <ul className="flex flex-wrap justify-center gap-8 ~text-lg/xl">
-          {settings.data.navigation.map((item) => (
-            <li key={item.link.text} className="hover:underline">
-              <PrismicNextLink field={item.link} />
-            </li>
-          ))}
-        </ul>
-      </Bounded>
+      <div className="flex flex-col items-center justify-center gap-2">
+        <div className="flex flex-row items-center justify-center gap-4">
+          <div>
+            <Bounded as="nav">
+              <ul className="flex flex-wrap justify-center gap-8 ~text-lg/xl">
+                {settings.data.navigation.map((item) => (
+                  <li key={item.link.text} className="hover:underline">
+                    <PrismicNextLink field={item.link} />
+                  </li>
+                ))}
+              </ul>
+            </Bounded>
+          </div>
+          <div>
+            @Sikhya Sagar 
+          </div>
+
+      </div>
+
       <Socials />
       </div>
       {/* List of links */}

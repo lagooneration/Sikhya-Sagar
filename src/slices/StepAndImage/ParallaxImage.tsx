@@ -8,17 +8,19 @@ import React, { useEffect, useRef } from "react";
 type Props = {
   foregroundImage: ImageField;
   backgroundImage: ImageField;
+  extraImage: ImageField;
   className?: string;
 };
 
 export function ParallaxImage({
   foregroundImage,
   backgroundImage,
+  extraImage,
   className,
 }: Props) {
   const backgroundRef = useRef<HTMLDivElement>(null);
   const foregroundRef = useRef<HTMLDivElement>(null);
-
+  const extraImageRef = useRef<HTMLDivElement>(null);
   const targetPosition = useRef({ x: 0, y: 0 });
   const currentPosition = useRef({ x: 0, y: 0 });
 
@@ -53,6 +55,9 @@ export function ParallaxImage({
       if (foregroundRef.current) {
         foregroundRef.current.style.transform = `translate(${newX * 2.5}px, ${newY * 2.5}px)`;
       }
+      if (extraImageRef.current) {
+        extraImageRef.current.style.transform = `translate(${newX * 4.5}px, ${newY * 4.5}px)`;
+      }
 
       requestAnimationFrame(animationFrame);
     }
@@ -82,6 +87,12 @@ export function ParallaxImage({
           imgixParams={{ height: 600 }}
           className="h-full max-h-[500px] w-auto"
         />
+      </div>
+      <div
+        ref={extraImageRef}
+        className="col-start-1 row-start-1 transition-transform"
+      >
+        <PrismicNextImage field={extraImage} alt="" className="w-11/12" />
       </div>
     </div>
   );

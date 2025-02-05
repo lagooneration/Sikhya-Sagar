@@ -189,6 +189,7 @@ export function Skateboard({
   );
 
   return (
+    <>
     <group
       dispose={null}
       rotation={positions[pose].rotation}
@@ -285,6 +286,7 @@ export function Skateboard({
         />
       </group>
     </group>
+    </>
   );
 }
 
