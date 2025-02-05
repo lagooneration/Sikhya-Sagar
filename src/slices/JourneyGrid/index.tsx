@@ -19,7 +19,8 @@ const JourneyGrid = ({ slice }: JourneyGridProps): JSX.Element => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-texture bg-brand-gray"
+      // className="bg-texture bg-brand-gray"
+      className="bg-brand-gray relative h-dvh overflow-hidden text-zinc-800 bg-texture"
     >
       {/* <div className="h-screen"> */}
       <SlideIn>

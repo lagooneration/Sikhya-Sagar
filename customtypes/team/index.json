@@ -1,7 +1,7 @@
 {
   "format": "page",
-  "id": "homepage",
-  "label": "Homepage",
+  "id": "team",
+  "label": "Team",
   "repeatable": false,
   "status": true,
   "json": {
@@ -11,19 +11,7 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "video_block": {
-              "type": "SharedSlice"
-            },
-            "step_and_image": {
-              "type": "SharedSlice"
-            },
             "team_grid": {
-              "type": "SharedSlice"
-            },
-            "journey_grid": {
-              "type": "SharedSlice"
-            },
-            "hero": {
               "type": "SharedSlice"
             }
           }
