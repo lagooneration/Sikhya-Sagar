@@ -9,6 +9,8 @@ import { ButtonLink } from "@/components/ButtonLink";
 import { WideLogo } from "./WideLogo";
 import { TallLogo } from "./TallLogo";
 import { InteractiveModel } from "./InteractiveModel";
+import { Pendulum } from "@/components/Pendulum";
+import { Pendulm } from "./Pendulm";
 
 /**
  * Props for `Hero`.
@@ -55,11 +57,16 @@ const Hero: FC<HeroProps> = ({ slice }) => {
         </ButtonLink>
         </div>
       </div>
-      <InteractiveModel
+      {/* <InteractiveModel
         deckTextureURL={deckTextureURL}
         wheelTextureURL={wheelTextureURL}
         truckColor={truckColor}
         boltColor={boltColor}
+      /> */}
+      <Pendulm
+        position={[0.6, -.3, 0.3]}
+        rotation={[0, -Math.PI/4, 0]}
+        scale={.08}
       />
     </Bounded>
   );

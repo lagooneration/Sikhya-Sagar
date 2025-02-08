@@ -9,6 +9,7 @@ import gsap from "gsap";
 import { Hotspot } from "./Hotspot";
 import { WavyPaths } from "./WavyPaths";
 import { GroupProps } from "@react-three/fiber";
+import { Pendulum } from "@/components/Pendulum";
 
 const INITIAL_CAMERA_POSITION = [1.5, 1, 1.4] as const;
 
@@ -39,19 +40,25 @@ export function InteractiveModel({
             truckColor={truckColor}
             boltColor={boltColor}
           />
+          {/* <Pendulum
+          position={[0, 0, 0]}
+          rotation={[0, 0, 0]}
+          scale={3}
+        /> */}
         </Suspense>
       </Canvas>
     </div>
   );
 }
-// function Scene() {
+// function Pendulum() {
 //     return (
 //         <group>
 //             <mesh>
 //                 <meshBasicMaterial color="red" />
-//                 <boxGeometry args={[1, 1, 1]} />
+//                 <boxGeometry args={[.5, .5, .5]} />
 //             </mesh>
 //         </group>
+
 //     );
 // }
 
