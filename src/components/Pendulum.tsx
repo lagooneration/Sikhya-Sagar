@@ -82,8 +82,15 @@ export function Pendulum({position, rotation, scale}: PendulumProps) {
                       castShadow
                       receiveShadow
                       geometry={nodes.pCylinder5_base_cromogris_0.geometry}
-                      material={materials.base_cromogris}
-                    />
+
+                    >
+                      <meshStandardMaterial
+                        {...materials.base_cromogris}
+                        metalness={1}
+                        roughness={0.2}
+                        envMapIntensity={1}
+                      />
+                    </mesh>
                   </group>
                   <group name="pTorus9" position={[-6.088, -8.279, 6.656]}>
                     <mesh
@@ -91,8 +98,14 @@ export function Pendulum({position, rotation, scale}: PendulumProps) {
                       castShadow
                       receiveShadow
                       geometry={nodes.pTorus9_base_cromogris_0.geometry}
-                      material={materials.base_cromogris}
-                    />
+                    >
+                      <meshStandardMaterial
+                        {...materials.base_cromogris}
+                        metalness={1}
+                        roughness={0.2}
+                        envMapIntensity={1}
+                      />
+                    </mesh>
                   </group>
                 </group>
                 <group name="group11" position={[0, -0.254, 0]}>
@@ -119,8 +132,14 @@ export function Pendulum({position, rotation, scale}: PendulumProps) {
                       castShadow
                       receiveShadow
                       geometry={nodes.pCylinder9_base_cromogris_0.geometry}
-                      material={materials.base_cromogris}
-                    />
+                    >
+                      <meshStandardMaterial
+                        {...materials.base_cromogris}
+                        metalness={1}
+                        roughness={0.2}
+                        envMapIntensity={1}
+                      />
+                    </mesh>
                   </group>
                   <group
                     name="pPipe1"
@@ -132,8 +151,14 @@ export function Pendulum({position, rotation, scale}: PendulumProps) {
                       castShadow
                       receiveShadow
                       geometry={nodes.pPipe1_base_cromogris_0.geometry}
-                      material={materials.base_cromogris}
-                    />
+                    >
+                      <meshStandardMaterial
+                        {...materials.base_cromogris}
+                        metalness={1}
+                        roughness={0.2}
+                        envMapIntensity={1}
+                      />
+                    </mesh>
                   </group>
                   <group
                     name="pPipe2"
@@ -145,8 +170,14 @@ export function Pendulum({position, rotation, scale}: PendulumProps) {
                       castShadow
                       receiveShadow
                       geometry={nodes.pPipe2_base_cromogris_0.geometry}
-                      material={materials.base_cromogris}
-                    />
+                    >
+                      <meshStandardMaterial
+                        {...materials.base_cromogris}
+                        metalness={1}
+                        roughness={0.2}
+                        envMapIntensity={1}
+                      />
+                    </mesh>
                   </group>
                   <group name="pSphere19" position={[6.086, 8.55, -11.795]} scale={0.158}>
                     <mesh
@@ -154,8 +185,14 @@ export function Pendulum({position, rotation, scale}: PendulumProps) {
                       castShadow
                       receiveShadow
                       geometry={nodes.pSphere19_base_cromogris_0.geometry}
-                      material={materials.base_cromogris}
-                    />
+                    >
+                      <meshStandardMaterial
+                        {...materials.base_cromogris}
+                        metalness={1}
+                        roughness={0.2}
+                        envMapIntensity={1}
+                      />
+                    </mesh>
                   </group>
                   <group
                     name="pSphere20"
@@ -167,8 +204,14 @@ export function Pendulum({position, rotation, scale}: PendulumProps) {
                       castShadow
                       receiveShadow
                       geometry={nodes.pSphere20_base_cromogris_0.geometry}
-                      material={materials.base_cromogris}
-                    />
+                    >
+                      <meshStandardMaterial
+                        {...materials.base_cromogris}
+                        metalness={1}
+                        roughness={0.2}
+                        envMapIntensity={1}
+                      />
+                    </mesh>
                   </group>
                   <group name="pTorus10">
                     <mesh
@@ -176,8 +219,15 @@ export function Pendulum({position, rotation, scale}: PendulumProps) {
                       castShadow
                       receiveShadow
                       geometry={nodes.pTorus10_base_cromogris_0.geometry}
-                      material={materials.base_cromogris}
-                    />
+
+                    >
+                      <meshStandardMaterial
+                        {...materials.base_cromogris}
+                        metalness={1}
+                        roughness={0.2}
+                        envMapIntensity={1}
+                      />
+                    </mesh>
                   </group>
                 </group>
                 <group name="group7">

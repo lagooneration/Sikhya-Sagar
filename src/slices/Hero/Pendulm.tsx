@@ -26,10 +26,9 @@ export function Pendulm({
     rotation,
     scale,
 }: Props) {
-  return (
+  return (  
 
     <div className="absolute inset-0 z-10 flex items-center justify-center">
-
       <Canvas
         className="min-h-[60rem] w-full"
         camera={{ position: INITIAL_CAMERA_POSITION, fov: 45 }}
@@ -45,7 +44,6 @@ export function Pendulm({
         <Environment files={"/hdr/warehouse-256.hdr"} />
         <ContactShadows position={[0, -0.29, 0]} opacity={0.85} />
       <OrbitControls />
-
       </Canvas>
 
 

@@ -66,7 +66,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       <Pendulm
         position={[0.6, -.3, 0.3]}
         rotation={[0, -Math.PI/4, 0]}
-        scale={.08}
+        scale={.06}
       />
     </Bounded>
   );
